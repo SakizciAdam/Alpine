@@ -79,6 +79,11 @@ public class EventManager implements EventBus {
             listeners.forEach(listener -> listener.invoke(event));
     }
 
+    @SuppressWarnings("unchecked")
+    public void post(Listener listener,Object event) {
+        listener.invoke(event);
+    }
+
     /**
      * Checks if a Field is a valid Event Handler field
      * by checking the field type and presence
